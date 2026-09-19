@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "name": "wedding-invitation-rsvp-api",
   "version": "1.0.0",
@@ -14,3 +15,21 @@
     "express": "^4.19.2"
   }
 }
+=======
+{
+  "name": "wedding-invitation-rsvp-api",
+  "version": "1.0.0",
+  "description": "Wedding RSVP and WhatsApp API backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
+>>>>>>> ca58e7462bdd81a2cb337fc5c2c7d5a7c400a674
