@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- EDIT HERE: Page Title -->
+  <title>Krishna &amp; Jyothi - Wedding Celebration</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Royal Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons, QR & Confetti CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            regal: {
+              emerald: '#2b1717',
+              darkgreen: '#150d0d',
+              forest: '#4a1d1d',
+              burgundy: '#5e171c',
+              ruby: '#7a1f2d',
+              gold: '#d5a25d',
+              goldLight: '#f5dfb9',
+              goldDark: '#9d6c2f',
+              champagne: '#f8f2e8',
+              cream: '#f3e7d3',
+              sand: '#dcc2a1',
+            }
+          },
+          fontFamily: {
+            cormorant: ['"Cormorant Garamond"', 'serif'],
+            cinzel: ['"Cinzel"', 'serif'],
+            cinzelDeco: ['"Cinzel Decorative"', 'serif'],
+            script: ['"Great Vibes"', 'cursive'],
+            montserrat: ['"Montserrat"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Golden Text & Luxury Radiance */
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #8d3e2d 0%, #f4e7c6 28%, #dca95c 58%, #7f4a28 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .gold-foil-border {
+      border: 1px solid rgba(213, 162, 93, 0.45);
+      box-shadow: 0 0 20px rgba(213, 162, 93, 0.12);
+    }
+
+    .intro-shell {
+      position: relative;
+      width: min(94vw, 1400px);
+      min-height: calc(100vh - 40px);
+      border: 1px solid rgba(213, 162, 93, 0.5);
+      border-radius: 32px;
+      background: rgba(25, 14, 12, 0.32);
+      box-shadow: inset 0 0 0 1px rgba(213, 162, 93, 0.2), 0 18px 40px rgba(13, 8, 7, 0.18);
+      backdrop-filter: blur(3px);
+    }
+
+    .intro-monogram {
+      width: 110px;
+      height: 110px;
+      border-radius: 999px;
+      border: 2px solid rgba(213, 162, 93, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.04);
+      box-shadow: 0 0 0 2px rgba(213, 162, 93, 0.08), 0 8px 22px rgba(213, 162, 93, 0.18);
+    }
+
+    .intro-subtitle {
+      font-family: "Great Vibes", cursive;
+      font-weight: 400;
+      color: rgba(245, 223, 185, 0.95);
+      letter-spacing: 0.02em;
+    }
+
+    .intro-name {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      line-height: 0.9;
+      color: transparent;
+      background: linear-gradient(135deg, #f4e7c6 0%, #f0c87d 24%, #fffaf5 40%, #dca95c 68%, #f4e7c6 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    }
+
+    .intro-date {
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      color: rgba(245, 223, 185, 0.9);
+    }
+
+    .regal-card {
+      background: linear-gradient(160deg, rgba(52, 25, 20, 0.96) 0%, rgba(18, 10, 12, 0.98) 100%);
+      border: 1px solid rgba(213, 162, 93, 0.35);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45), inset 0 0 25px rgba(213, 162, 93, 0.04);
+      backdrop-filter: blur(16px);
+    }
+
+    @media (max-width: 767px) {
+      #phase1-video .relative.z-10 {
+        max-width: 88vw;
+      }
+
+      #phase1-video h1 {
+        font-size: clamp(2.6rem, 10vw, 4.3rem) !important;
+        letter-spacing: 0.02em;
+      }
+
+      #phase1-video .font-script {
+        font-size: clamp(2rem, 8vw, 3.2rem) !important;
+      }
+
+      #phase1-video .tracking-[0.3em] {
+        letter-spacing: 0.18em !important;
+      }
+
+      #phase2-transition .w-full.max-w-xl {
+        max-width: 92vw;
+      }
+
+      #phase2-transition #scroll-parchment {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+    }
+
+    @keyframes royalPulse {
+      0%, 100% {
+        box-shadow: 0 0 25px rgba(223, 183, 108, 0.5), inset 0 0 10px rgba(255, 246, 203, 0.5);
+        transform: scale(1);
+      }
+      50% {
+        box-shadow: 0 0 45px rgba(246, 228, 181, 0.85), inset 0 0 20px rgba(255, 255, 255, 0.8);
+        transform: scale(1.03);
+      }
+    }
+
+    .pulse-glow-btn {
+      animation: royalPulse 2.8s infinite ease-in-out;
+    }
+
+    @keyframes sealCrack {
+      0% { transform: scale(1) rotate(0deg); opacity: 1; }
+      50% { transform: scale(1.15) rotate(10deg); opacity: 0.9; }
+      100% { transform: scale(1.6) rotate(-20deg); opacity: 0; }
+    }
+
+    .seal-breaking {
+      animation: sealCrack 0.7s forwards ease-in-out;
+    }
+
+    /* Luxury Scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #02160f;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom, #dfb76c, #a0782e);
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+
+<body class="bg-[#160d0d] text-regal-champagne font-montserrat antialiased selection:bg-regal-gold selection:text-[#160d0d] overflow-x-hidden min-h-screen">
+
+  <section id="phase1-video" class="fixed inset-0 z-50 flex items-center justify-center bg-black transition-opacity duration-1000 select-none overflow-hidden">
+    <div class="absolute inset-0 w-full h-full overflow-hidden">
+      <video id="teaser-video" autoplay muted loop playsinline class="w-full h-full object-cover opacity-60 filter brightness-90 contrast-110">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-golden-particles-in-the-air-41484-large.mp4" type="video/mp4">
+      </video>
+      <canvas id="cinematic-canvas" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
+    </div>
+
+    <div class="absolute inset-0 bg-gradient-to-t from-regal-darkgreen via-black/40 to-regal-darkgreen pointer-events-none"></div>
+
+    <div class="intro-shell relative z-10 flex flex-col justify-between px-5 sm:px-8 py-5 sm:py-6">
+      <div class="flex justify-between items-start w-full">
+        <div class="flex items-center gap-2 text-[10px] sm:text-xs uppercase tracking-[0.3em] text-[#8b5a32] font-semibold">
+          <span class="w-2 h-2 rounded-full bg-regal-gold animate-ping"></span>
+          <span>Wedding Invitation</span>
+        </div>
+        <div class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-[#8b5a32] font-semibold">India</div>
+      </div>
+
+      <div class="flex flex-1 items-center justify-center">
+        <div class="w-full max-w-4xl text-center px-4">
+          <div class="intro-monogram mx-auto mb-6">
+            <span class="font-cinzelDeco text-[1.8rem] font-bold gold-gradient-text tracking-widest">K &amp; J</span>
+          </div>
+
+          <p class="intro-subtitle text-2xl sm:text-4xl md:text-[3.1rem] leading-none mb-4">
+            Together with their families
+          </p>
+
+          <h1 class="intro-name text-[3.6rem] sm:text-[4rem] md:text-[6rem] leading-[1.3] mb-3">
+  Krishna &amp; Jyothi
+</h1>
+
+          <div class="flex items-center justify-center gap-8 my-6">
+            <span class="inline-block h-px w-16 bg-[#d1955f]"></span>
+            <p class="intro-date">28 • 12 • 2026 • India</p>
+            <span class="inline-block h-px w-16 bg-[#d1955f]"></span>
+          </div>
+
+          <div id="cta-container" class="opacity-0 transition-all duration-1000 transform translate-y-6 mt-4">
+            <button id="tap-to-open-btn" class="pulse-glow-btn px-8 sm:px-12 py-4 rounded-full bg-gradient-to-r from-[#d98742] via-[#f0a55f] to-[#d6782a] text-[#fffdf9] font-bold tracking-[0.2em] text-xs sm:text-sm uppercase shadow-[0_8px_28px_rgba(214,120,42,0.35)] hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center gap-3 mx-auto cursor-pointer">
+              <span>Tap To Open Invitation</span>
+              <i data-lucide="sparkles" class="w-4 h-4 text-[#fffdf9]"></i>
+            </button>
+            <p class="text-[10px] tracking-[0.25em] text-[#a56c3a] uppercase mt-4">
+              Tap Anywhere On Screen To Begin
+            </p>
+          </div>
+
+          <button id="quick-enter-btn" class="mt-6 text-xs text-[#a66d3b] underline hover:text-[#8a572b] transition cursor-pointer">
+            Enter invitation directly →
+          </button>
+        </div>
+      </div>
+
+      <div class="flex justify-between items-end w-full text-[10px] sm:text-xs uppercase tracking-[0.28em] text-[#8b5a32] font-semibold">
+        <span>॥ श्री गणेशाय नमः ॥</span>
+        <span>Save Our Sacred Date</span>
+      </div>
+    </div>
+  </section>
+
+  <div id="phase2-transition" class="fixed inset-0 z-40 hidden flex items-center justify-center bg-regal-darkgreen/95 backdrop-blur-2xl px-4 select-none">
+    <div class="relative w-full max-w-xl mx-auto flex flex-col items-center">
+      
+      <!-- Top Golden Rod -->
+      <div class="w-full h-8 sm:h-10 bg-gradient-to-r from-regal-goldDark via-regal-goldLight to-regal-goldDark rounded-full shadow-2xl border-b-2 border-regal-emerald flex items-center justify-center relative z-20">
+        <div class="w-20 h-2 bg-regal-burgundy/40 rounded-full"></div>
+        <div class="absolute -left-2 w-4 h-12 bg-regal-gold rounded-full border border-regal-goldDark"></div>
+        <div class="absolute -right-2 w-4 h-12 bg-regal-gold rounded-full border border-regal-goldDark"></div>
+      </div>
+
+      <!-- Wax Seal -->
+      <div id="scroll-wax-seal" class="absolute z-30 top-6 w-16 h-16 rounded-full bg-gradient-to-br from-regal-ruby to-regal-burgundy border-2 border-regal-gold shadow-2xl flex items-center justify-center text-regal-goldLight font-cinzel font-bold text-xs transition-all duration-500">
+        <i data-lucide="crown" class="w-6 h-6 text-regal-goldLight"></i>
+      </div>
+
+      <!-- Unrolling Parchment -->
+      <div id="scroll-parchment" class="w-full bg-[#faf5eb] text-regal-emerald py-12 sm:py-16 px-6 sm:px-10 border-x-4 border-regal-gold shadow-2xl text-center flex flex-col items-center relative overflow-hidden transform origin-top transition-transform duration-1000 scale-y-0">
+        <div class="absolute inset-0 opacity-10 flex items-center justify-center pointer-events-none">
+          <svg class="w-80 h-80 animate-spin" style="animation-duration: 40s;" viewBox="0 0 100 100" fill="currentColor">
+            <circle cx="50" cy="50" r="44" stroke="#9e7529" stroke-width="0.8" fill="none" stroke-dasharray="2 2"/>
+            <polygon points="50,5 62,38 95,50 62,62 50,95 38,62 5,50 38,38" fill="#9e7529"/>
+          </svg>
+        </div>
+
+        <span class="font-cinzel text-regal-goldDark tracking-[0.25em] text-xs uppercase mb-2">✦ MANGALYA DHARANAM ✦</span>
+        <h2 class="font-cormorant text-3xl sm:text-3xl text-regal-burgundy font-bold mb-2">Unveiling The Wedding invitation</h2>
+        <!-- EDIT HERE: Couple Names on Parchment -->
+        <!-- Couple Names on Parchment -->
+<div class="font-script text-regal-goldDark mb-6 text-center">
+    <p class="text-2xl sm:text-3xl">
+        Tulasi Krishna Veladanda
+    </p>
+
+    <p class="text-xl sm:text-2xl my-2">
+        &amp;
+    </p>
+
+    <p class="text-2xl sm:text-3xl">
+        Datta Jyothi Jammalamadaka
+    </p>
+</div>  
+        
+        <div class="w-24 h-0.5 bg-regal-goldDark mx-auto mb-6"></div>
+        <p class="font-montserrat text-xs text-regal-emerald/90 uppercase tracking-widest leading-relaxed max-w-md">
+          With the divine grace of the almighty and blessings of our beloved elders, welcome to our celebration of love and life.
+        </p>
+
+        <!-- Progress Indicator -->
+        <div class="mt-8 flex items-center justify-center gap-2">
+          <div class="w-2.5 h-2.5 rounded-full bg-regal-goldDark animate-ping"></div>
+          <span class="text-[11px] uppercase tracking-widest font-semibold text-regal-goldDark">Awaiting Your Blessing To Enter...</span>
+        </div>
+
+        <button id="continue-invitation-btn" class="mt-8 px-8 py-3 rounded-full bg-gradient-to-r from-regal-goldDark via-regal-gold to-regal-goldLight text-regal-emerald font-bold uppercase tracking-[0.2em] text-[10px] shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 hidden">
+          Continue to Invitation
+        </button>
+      </div>
+
+      <!-- Bottom Golden Rod -->
+      <div class="w-full h-8 sm:h-10 bg-gradient-to-r from-regal-goldDark via-regal-goldLight to-regal-goldDark rounded-full shadow-2xl border-t-2 border-regal-emerald flex items-center justify-center relative z-20">
+        <div class="w-20 h-2 bg-regal-burgundy/40 rounded-full"></div>
+        <div class="absolute -left-2 w-4 h-12 bg-regal-gold rounded-full border border-regal-goldDark"></div>
+        <div class="absolute -right-2 w-4 h-12 bg-regal-gold rounded-full border border-regal-goldDark"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <main id="phase3-main" class="relative opacity-0 transition-opacity duration-1000 min-h-screen">
+    
+    <!-- Floating Action Bar (Audio toggle + Quick RSVP + Share) -->
+    <aside class="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+      <button id="audio-toggle-btn" class="w-12 h-12 rounded-full bg-gradient-to-r from-regal-gold to-regal-goldLight text-regal-emerald shadow-2xl flex items-center justify-center border-2 border-regal-goldLight hover:scale-110 active:scale-95 transition" title="Toggle Music">
+        <i data-lucide="volume-2" id="music-icon" class="w-5 h-5"></i>
+      </button>
+
+      <a href="#rsvp-section" data-rsvp-target class="w-12 h-12 rounded-full bg-regal-emerald text-regal-gold shadow-2xl flex items-center justify-center border border-regal-gold hover:scale-110 active:scale-95 transition" title="RSVP Now">
+        <i data-lucide="mail-check" class="w-5 h-5"></i>
+      </a>
+
+      <button id="share-invite-btn" class="w-12 h-12 rounded-full bg-regal-forest text-regal-champagne shadow-2xl flex items-center justify-center border border-regal-gold/40 hover:scale-110 active:scale-95 transition" title="Share Link">
+        <i data-lucide="share-2" class="w-5 h-5"></i>
+      </button>
+    </aside>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-30 backdrop-blur-xl bg-regal-darkgreen/85 border-b border-regal-gold/25 py-4 px-6 transition">
+      <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <!-- EDIT HERE: Monogram Header Logo -->
+        <a href="#" class="flex items-center gap-3 font-cinzelDeco gold-gradient-text">
+          <span class="text-xl sm:text-2xl font-bold tracking-widest">K &amp; J</span>
+          <span class="hidden sm:block font-cormorant text-[10px] uppercase tracking-[0.28em] text-regal-goldLight/90">Krishna &amp; Jyothi</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8 text-[11px] uppercase tracking-[0.2em] text-regal-cream/80 font-medium">
+          <a href="#couple" class="hover:text-regal-gold transition">The Couple</a>
+          <a href="#itinerary" class="hover:text-regal-gold transition">Events</a>
+          <a href="#venue" class="hover:text-regal-gold transition">Venue &amp; Stay</a>
+          <a href="#dresscode" class="hover:text-regal-gold transition">Dress Code</a>
+          <a href="#gallery" class="hover:text-regal-gold transition">Gallery</a>
+          <a href="#wishes" class="hover:text-regal-gold transition">Blessing Wall</a>
+          <a href="#rsvp-section" data-rsvp-target class="px-5 py-2 rounded-full border border-regal-gold text-regal-gold hover:bg-regal-gold hover:text-regal-emerald font-semibold transition">RSVP</a>
+        </nav>
+
+        <!-- Mobile Menu Trigger -->
+        <button id="mobile-menu-btn" class="md:hidden text-regal-gold p-1 focus:outline-none">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden md:hidden pt-4 pb-2 border-t border-regal-gold/20 mt-3 space-y-3 text-center text-xs uppercase tracking-widest">
+        <a href="#couple" class="block py-1 hover:text-regal-gold">The Couple</a>
+        <a href="#itinerary" class="block py-1 hover:text-regal-gold">Events Itinerary</a>
+        <a href="#venue" class="block py-1 hover:text-regal-gold">Venue &amp; Stay</a>
+        <a href="#dresscode" class="block py-1 hover:text-regal-gold">Dress Code</a>
+        <a href="#gallery" class="block py-1 hover:text-regal-gold">Photo Moments</a>
+        <a href="#wishes" class="block py-1 hover:text-regal-gold">Blessing Wall</a>
+        <a href="#rsvp-section" data-rsvp-target class="block py-2 text-regal-gold font-bold">RSVP Now</a>
+      </div>
+    </header>
+
+    <div data-section="hero"></div>
+
+    <div data-section="story"></div>
+
+    <div data-section="itinerary"></div>
+
+    <div data-section="venue"></div>
+
+    <div data-section="dresscode"></div>
+
+    <div data-section="gallery"></div>
+
+    <div data-section="wishes"></div>
+
+    <section id="rsvp-section" class="py-24 px-6 max-w-4xl mx-auto">
+      <div class="regal-card p-8 sm:p-14 rounded-3xl relative border border-regal-gold/50 shadow-2xl">
+        <div class="text-center mb-10">
+          <span class="font-cinzel text-xs tracking-[0.3em] uppercase text-regal-gold">Your Gracious Presence</span>
+          <h2 class="font-cormorant text-4xl sm:text-5xl font-bold gold-gradient-text mt-2">Kindly Respond</h2>
+          <p class="text-xs sm:text-sm text-regal-cream/70 mt-2">Please reply by November 15, 2026 to help us prepare your royal suite &amp; transfers.</p>
+        </div>
+
+        <!-- RSVP Form -->
+        <form id="wedding-rsvp-form" class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs uppercase tracking-widest text-regal-goldLight mb-2" for="guest-name">Full Name *</label>
+              <input type="text" id="guest-name" required placeholder="e.g., Lord / Dr. Kabir Mehta" 
+                     class="w-full bg-regal-darkgreen/80 border border-regal-gold/40 rounded-xl px-4 py-3 text-sm text-regal-champagne focus:outline-none focus:border-regal-gold focus:ring-1 focus:ring-regal-gold" />
+            </div>
+
+            <div>
+              <label class="block text-xs uppercase tracking-widest text-regal-goldLight mb-2" for="guest-contact">Mobile / WhatsApp Number *</label>
+              <input type="tel" id="guest-contact" required placeholder="+91 98765 43210" 
+                     class="w-full bg-regal-darkgreen/80 border border-regal-gold/40 rounded-xl px-4 py-3 text-sm text-regal-champagne focus:outline-none focus:border-regal-gold focus:ring-1 focus:ring-regal-gold" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs uppercase tracking-widest text-regal-goldLight mb-2">Will you be attending? *</label>
+              <select id="attendance-status" class="w-full bg-regal-darkgreen/80 border border-regal-gold/40 rounded-xl px-4 py-3 text-sm text-regal-champagne focus:outline-none focus:border-regal-gold">
+                <option value="joyfully_accept">Joyfully Accept (All Celebrations)</option>
+                <option value="accept_wedding_only">Accept (Wedding &amp; Reception Only)</option>
+                <option value="regretfully_decline">Regretfully Decline from afar</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs uppercase tracking-widest text-regal-goldLight mb-2">Number of Guests in Party *</label>
+              <input type="number" id="guest-count" min="1" max="6" value="2" 
+                     class="w-full bg-regal-darkgreen/80 border border-regal-gold/40 rounded-xl px-4 py-3 text-sm text-regal-champagne focus:outline-none focus:border-regal-gold" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs uppercase tracking-widest text-regal-goldLight mb-2" for="guest-diet">Dietary Preferences</label>
+              <input type="text" id="guest-diet" placeholder="e.g., Pure Veg, Jain, Vegan, Gluten-free" 
+                     class="w-full bg-regal-darkgreen/80 border border-regal-gold/40 rounded-xl px-4 py-3 text-sm text-regal-champagne focus:outline-none focus:border-regal-gold" />
+            </div>
+
+            <div>
+              <label class="block text-xs uppercase tracking-widest text-regal-goldLight mb-2" for="flight-info">Arrival Flight / Train (Optional)</label>
+              <input type="text" id="flight-info" placeholder="e.g., AI 471 on Dec 18, 09:30 AM" 
+                     class="w-full bg-regal-darkgreen/80 border border-regal-gold/40 rounded-xl px-4 py-3 text-sm text-regal-champagne focus:outline-none focus:border-regal-gold" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-regal-goldLight mb-2" for="song-request">Sangeet Dance Floor Song Request 🎶</label>
+            <input type="text" id="song-request" placeholder="Name a track you want the DJ to play..." 
+                   class="w-full bg-regal-darkgreen/80 border border-regal-gold/40 rounded-xl px-4 py-3 text-sm text-regal-champagne focus:outline-none focus:border-regal-gold" />
+          </div>
+
+          <button type="submit" class="w-full py-4 rounded-full bg-gradient-to-r from-regal-goldDark via-regal-gold to-regal-goldLight text-regal-emerald font-bold uppercase tracking-widest text-sm shadow-2xl hover:brightness-110 active:scale-98 transition duration-200">
+            Confirm Royal Attendance &amp; Generate Pass
+          </button>
+        </form>
+
+        <!-- Digital Pass Card (Displayed on Submit) -->
+        <div id="rsvp-success-card" class="hidden mt-8 animate-fade-in">
+          <div class="p-8 rounded-3xl bg-gradient-to-br from-regal-forest via-regal-emerald to-regal-darkgreen border-2 border-regal-gold text-center relative overflow-hidden shadow-2xl">
+            <div class="w-12 h-12 rounded-full bg-regal-gold text-regal-emerald mx-auto flex items-center justify-center mb-3">
+              <i data-lucide="check" class="w-6 h-6"></i>
+            </div>
+            <span class="text-xs uppercase tracking-[0.25em] text-regal-goldLight">Official Wedding Guest Confirmation</span>
+            <h3 class="font-cormorant text-3xl sm:text-4xl text-regal-champagne font-bold mt-1 mb-2" id="pass-guest-name">Guest Name</h3>
+            <p class="text-xs text-regal-sand uppercase tracking-wider mb-6">Party of <span id="pass-guest-count">2</span> Guests • Udaipur, Rajasthan</p>
+
+            <p class="text-sm text-regal-cream/90 max-w-md mx-auto mb-6">
+              Your RSVP has been recorded successfully. A WhatsApp confirmation has been sent to your number and the organizer has also received your response.
+            </p>
+
+            <div class="flex justify-center">
+              <button id="send-guest-whatsapp-btn" class="px-6 py-2.5 rounded-full bg-regal-gold text-regal-emerald text-xs uppercase tracking-widest hover:brightness-110 transition">
+                Open WhatsApp Confirmation
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="admin-login-section" class="py-16 px-6 max-w-4xl mx-auto">
+      <div id="admin-login-card" class="regal-card p-8 rounded-3xl border border-regal-gold/50 max-w-md mx-auto">
+        <div class="text-center mb-6">
+          <span class="font-cinzel text-xs tracking-[0.3em] uppercase text-regal-gold">Organizer Access</span>
+          <h3 class="font-cormorant text-3xl text-regal-champagne font-bold mt-2">Private RSVP Portal</h3>
+        </div>
+
+        <form id="admin-login-form" class="space-y-4">
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-regal-goldLight mb-2" for="admin-password">Password</label>
+            <input type="password" id="admin-password" placeholder="Enter organizer password" class="w-full bg-regal-darkgreen/80 border border-regal-gold/40 rounded-xl px-4 py-3 text-sm text-regal-champagne focus:outline-none focus:border-regal-gold" />
+          </div>
+          <button type="submit" class="w-full py-3 rounded-full bg-gradient-to-r from-regal-goldDark via-regal-gold to-regal-goldLight text-regal-emerald font-bold uppercase tracking-widest text-xs">
+            Access Excel Sheet
+          </button>
+        </form>
+      </div>
+
+      <div id="admin-panel" class="hidden regal-card p-8 rounded-3xl border border-regal-gold/50 max-w-4xl mx-auto text-center">
+        <span class="font-cinzel text-xs tracking-[0.3em] uppercase text-regal-gold">Organizer Panel</span>
+        <h3 class="font-cormorant text-3xl text-regal-champagne font-bold mt-2 mb-4">RSVP Records</h3>
+        <p id="admin-rsvp-count" class="text-sm text-regal-cream/80 mb-6">0 guests have responded.</p>
+
+        <div class="overflow-x-auto mt-4 rounded-2xl border border-regal-gold/30">
+          <table class="w-full text-left text-sm text-regal-cream/90">
+            <thead class="bg-regal-darkgreen/70 text-regal-goldLight uppercase tracking-wider text-[10px]">
+              <tr>
+                <th class="px-3 py-3">Name</th>
+                <th class="px-3 py-3">Phone</th>
+                <th class="px-3 py-3">Attend</th>
+                <th class="px-3 py-3">Count</th>
+                <th class="px-3 py-3">Diet</th>
+                <th class="px-3 py-3">Arrival</th>
+                <th class="px-3 py-3">Song</th>
+                <th class="px-3 py-3">Time</th>
+              </tr>
+            </thead>
+            <tbody id="admin-rsvp-table-body" class="divide-y divide-regal-gold/20"></tbody>
+          </table>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3 justify-center mt-6">
+          <button id="admin-export-btn" class="px-6 py-3 rounded-full bg-regal-gold text-regal-emerald text-xs uppercase tracking-widest hover:brightness-110 transition">
+            Download Excel Sheet
+          </button>
+          <button id="admin-logout-btn" class="px-6 py-3 rounded-full border border-regal-gold text-regal-gold text-xs uppercase tracking-widest hover:bg-regal-gold hover:text-regal-emerald transition">
+            Logout
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 px-6 max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="font-cinzel text-xs tracking-[0.3em] uppercase text-regal-gold">Helpful Information</span>
+        <h2 class="font-cormorant text-3xl sm:text-5xl font-bold gold-gradient-text mt-2">Palace FAQs</h2>
+        <div class="w-20 h-0.5 bg-regal-gold/40 mx-auto mt-4"></div>
+      </div>
+
+      <div class="space-y-4">
+        <details class="regal-card p-6 rounded-2xl group cursor-pointer">
+          <summary class="flex justify-between items-center font-cormorant text-xl text-regal-champagne font-bold list-none">
+            <span>How do we reach Jagmandir Island for the wedding ceremony?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-regal-gold group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="text-xs sm:text-sm text-regal-cream/80 mt-3 leading-relaxed border-t border-regal-gold/20 pt-3">
+            Decorated solar ferries will depart continuously from The Leela Palace private jetty every 15 minutes starting at 03:45 PM on December 19. The boat ride takes approximately 8 scenic minutes across Lake Pichola.
+          </p>
+        </details>
+
+        <details class="regal-card p-6 rounded-2xl group cursor-pointer">
+          <summary class="flex justify-between items-center font-cormorant text-xl text-regal-champagne font-bold list-none">
+            <span>What is Udaipur's weather like in December?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-regal-gold group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="text-xs sm:text-sm text-regal-cream/80 mt-3 leading-relaxed border-t border-regal-gold/20 pt-3">
+            Days are pleasantly warm and sunny (22°C - 26°C), while evenings by the open lake turn crisp and cool (10°C - 14°C). We recommend bringing pashmina shawls, royal bandhgalas, or evening wraps for nighttime festivities.
+          </p>
+        </details>
+
+        <details class="regal-card p-6 rounded-2xl group cursor-pointer">
+          <summary class="flex justify-between items-center font-cormorant text-xl text-regal-champagne font-bold list-none">
+            <span>Can we request specific vegetarian or Jain meals?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-regal-gold group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="text-xs sm:text-sm text-regal-cream/80 mt-3 leading-relaxed border-t border-regal-gold/20 pt-3">
+            Absolutely. All meal spreads feature dedicated pure vegetarian, Jain, and international counters. Kindly mention any specific dietary requirements in your RSVP form above.
+          </p>
+        </details>
+
+        <details class="regal-card p-6 rounded-2xl group cursor-pointer">
+          <summary class="flex justify-between items-center font-cormorant text-xl text-regal-champagne font-bold list-none">
+            <span>Are children welcome to the celebrations?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-regal-gold group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="text-xs sm:text-sm text-regal-cream/80 mt-3 leading-relaxed border-t border-regal-gold/20 pt-3">
+            Yes, your little ones are warmly welcomed! The hotel also provides supervised children’s play lounges during late-night events should you wish to take advantage of them.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 text-center border-t border-regal-gold/25 bg-regal-darkgreen/90 relative overflow-hidden">
+      <div class="max-w-2xl mx-auto px-6">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full border border-regal-gold/50 flex items-center justify-center bg-regal-emerald/60">
+          <span class="font-cinzelDeco text-2xl text-regal-gold font-bold">K &amp; J</span>
+        </div>
+        <h4 class="font-cormorant text-3xl sm:text-4xl gold-gradient-text font-bold">Krishna &amp; Jyothi</h4>
+        <p class="font-script text-2xl text-regal-goldLight mt-1">#Tulasi Krishna VeladandaFoundHisMeera</p>
+        
+        <div class="flex items-center justify-center gap-3 my-6 text-xs uppercase tracking-widest text-regal-cream/60">
+          <span>December 28, 2026</span>
+          <span>•</span>
+          <span>The Leela Palace, Udaipur</span>
+        </div>
+
+        <p class="text-[11px] text-regal-sand/50 tracking-wider">
+          Crafted with love for our cherished guests. We look forward to celebrating with you!
+        </p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Photo Lightbox Modal -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-xl flex items-center justify-center p-4">
+    <button id="lightbox-close" class="absolute top-6 right-6 text-regal-goldLight hover:text-white p-2 text-2xl">
+      <i data-lucide="x" class="w-8 h-8"></i>
+    </button>
+    <div class="max-w-4xl max-h-[85vh] flex flex-col items-center">
+      <img id="lightbox-img" src="" alt="Zoomed Photo" class="max-w-full max-h-[75vh] object-contain rounded-2xl border border-regal-gold/40 shadow-2xl mb-4" />
+      <p id="lightbox-caption" class="font-cormorant text-xl text-regal-gold tracking-wide"></p>
+    </div>
+  </div>
+
+  <script>
+    /* ====================================================
+       SAFE CONFETTI ENGINE (Includes Zero-Dependency Native Canvas Fallback)
+       ==================================================== */
+    function runNativeConfetti(opts = {}) {
+      try {
+        const count = opts.particleCount || 60;
+        const originY = (opts.origin && typeof opts.origin.y === 'number') ? opts.origin.y : 0.6;
+        const colors = opts.colors || ['#dfb76c', '#f6e4b5', '#a0782e', '#ffffff', '#042217'];
+
+        const canvas = document.createElement('canvas');
+        canvas.style.position = 'fixed';
+        canvas.style.top = '0';
+        canvas.style.left = '0';
+        canvas.style.width = '100vw';
+        canvas.style.height = '100vh';
+        canvas.style.pointerEvents = 'none';
+        canvas.style.zIndex = '99999';
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        document.body.appendChild(canvas);
+
+        const ctx = canvas.getContext('2d');
+        const particles = [];
+        const startX = canvas.width / 2;
+        const startY = canvas.height * originY;
+
+        for (let i = 0; i < count; i++) {
+          const angle = (Math.PI / 180) * (opts.spread ? (270 + (Math.random() - 0.5) * opts.spread) : (Math.random() * 360));
+          const speed = Math.random() * 12 + 6;
+          particles.push({
+            x: startX,
+            y: startY,
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed,
+            w: Math.random() * 8 + 4,
+            h: Math.random() * 6 + 3,
+            color: colors[Math.floor(Math.random() * colors.length)],
+            rotation: Math.random() * 360,
+            vRot: (Math.random() - 0.5) * 10,
+            opacity: 1,
+            gravity: 0.25,
+            friction: 0.98
+          });
+        }
+
+        let frame = 0;
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          let active = 0;
+
+          for (const p of particles) {
+            p.x += p.vx;
+            p.y += p.vy;
+            p.vy += p.gravity;
+            p.vx *= p.friction;
+            p.vy *= p.friction;
+            p.rotation += p.vRot;
+            p.opacity -= 0.009;
+
+            if (p.opacity > 0) {
+              active++;
+              ctx.save();
+              ctx.translate(p.x, p.y);
+              ctx.rotate((p.rotation * Math.PI) / 180);
+              ctx.globalAlpha = Math.max(0, p.opacity);
+              ctx.fillStyle = p.color;
+              ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+              ctx.restore();
+            }
+          }
+
+          if (active > 0 && frame < 180) {
+            frame++;
+            requestAnimationFrame(animate);
+          } else {
+            canvas.remove();
+          }
+        }
+        requestAnimationFrame(animate);
+      } catch (err) {
+        console.warn("Confetti fallback error:", err);
+      }
+    }
+
+    var confetti = function(opts) {
+      if (typeof window.confetti === 'function' && window.confetti !== confetti) {
+        try {
+          return window.confetti(opts);
+        } catch (e) {
+          // fallback
+        }
+      }
+      return runNativeConfetti(opts);
+    };
+    window.confetti = confetti;
+
+    // Safe Lucide icon initializer
+    if (window.lucide && typeof lucide.createIcons === 'function') {
+      lucide.createIcons();
+    }
+
+    function bindDynamicGallery() {
+      document.querySelectorAll('.gallery-item').forEach(item => {
+        item.onclick = () => {
+          const src = item.getAttribute('data-src');
+          const cap = item.getAttribute('data-caption');
+          const lightboxImg = document.getElementById('lightbox-img');
+          const lightboxCaption = document.getElementById('lightbox-caption');
+          const lightboxModal = document.getElementById('lightbox-modal');
+          lightboxImg.src = src;
+          lightboxCaption.innerText = cap;
+          lightboxModal.classList.remove('hidden');
+        };
+      });
+    }
+
+    function bindEventFilters() {
+      const filterButtons = document.querySelectorAll('.event-filter-btn');
+      const eventCards = document.querySelectorAll('.event-card');
+
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterButtons.forEach(b => {
+            b.classList.remove('bg-regal-gold', 'text-regal-emerald', 'font-semibold');
+            b.classList.add('text-regal-champagne');
+          });
+          btn.classList.add('bg-regal-gold', 'text-regal-emerald', 'font-semibold');
+          btn.classList.remove('text-regal-champagne');
+
+          const selectedDay = btn.getAttribute('data-day');
+          eventCards.forEach(card => {
+            if (selectedDay === 'all' || card.getAttribute('data-day') === selectedDay) {
+              card.classList.remove('hidden');
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+        });
+      });
+    }
+
+    function bindBlessingForm() {
+      const form = document.getElementById('blessing-form');
+      if (!form) return;
+      const feed = document.getElementById('blessings-feed');
+      if (!feed) return;
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('blessing-name').value.trim();
+        const city = document.getElementById('blessing-city').value.trim() || 'Well-wisher';
+        const text = document.getElementById('blessing-text').value.trim();
+
+        if (!name || !text) return;
+
+        const card = document.createElement('div');
+        card.className = 'regal-card p-6 rounded-2xl border-regal-gold/50 border';
+        card.innerHTML = `
+          <div class="flex justify-between items-center mb-2">
+            <h5 class="font-cormorant text-xl font-bold text-regal-gold">${name}</h5>
+            <span class="text-[10px] uppercase tracking-widest text-regal-sand/70">${city}</span>
+          </div>
+          <p class="text-xs sm:text-sm text-regal-cream/90 leading-relaxed italic">“${text}”</p>
+        `;
+
+        feed.prepend(card);
+        form.reset();
+
+        confetti({
+          particleCount: 40,
+          spread: 50,
+          origin: { y: 0.7 },
+          colors: ['#dfb76c', '#f6e4b5']
+        });
+      });
+    }
+
+    async function loadSection(name) {
+      const placeholder = document.querySelector(`[data-section="${name}"]`);
+      if (!placeholder) return;
+
+      try {
+        const response = await fetch(`sections/${name}.html`);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const html = await response.text();
+        placeholder.innerHTML = html;
+        if (window.lucide && typeof lucide.createIcons === 'function') {
+          lucide.createIcons();
+        }
+      } catch (error) {
+        console.error(`Failed to load ${name} section`, error);
+        placeholder.innerHTML = `<div class="max-w-3xl mx-auto p-8 text-center regal-card rounded-3xl border border-red-500/30">Section failed to load.</div>`;
+      }
+    }
+
+    async function loadAllSections() {
+      const names = ['hero', 'story', 'itinerary', 'venue', 'dresscode', 'gallery', 'wishes'];
+      await Promise.all(names.map(loadSection));
+      bindDynamicGallery();
+      bindEventFilters();
+      bindBlessingForm();
+      const calendarBtn = document.getElementById('calendar-btn');
+      if (calendarBtn) {
+        calendarBtn.addEventListener('click', () => {
+          const ics = [
+            "BEGIN:VCALENDAR",
+            "VERSION:2.0",
+            "PRODID:-//Tulasi Krishna Veladanda and Meera Wedding//EN",
+            "CALSCALE:GREGORIAN",
+            "METHOD:PUBLISH",
+            "BEGIN:VEVENT",
+            "SUMMARY:Tulasi Krishna Veladanda & Meera's Royal Wedding",
+            "DESCRIPTION:Join us for the royal wedding of Tulasi Krishna Veladanda Singhania and Meera Kapoor at The Leela Palace, Udaipur.",
+            "LOCATION:The Leela Palace, Lake Pichola, Udaipur, Rajasthan, India",
+            "DTSTART:20261228T103000Z",
+            "DTEND:20261228T200000Z",
+            "STATUS:CONFIRMED",
+            "END:VEVENT",
+            "END:VCALENDAR"
+          ].join("\r\n");
+
+          const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+          const a = document.createElement('a');
+          a.href = window.URL.createObjectURL(blob);
+          a.setAttribute('download', 'Tulasi Krishna Veladanda_Meera_Royal_Wedding.ics');
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        });
+      }
+    }
+
+    loadAllSections();
+
+    const canvas = document.getElementById('cinematic-canvas');
+    const ctx = canvas.getContext('2d');
+    let animId;
+    const particles = [];
+    const particleCount = 75;
+
+    function resizeCanvas() {
+      if (!canvas) return;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * (canvas.width || 800),
+        y: Math.random() * (canvas.height || 600),
+        r: Math.random() * 2.2 + 0.5,
+        sy: Math.random() * 0.7 + 0.3,
+        sx: (Math.random() - 0.5) * 0.4,
+        alpha: Math.random() * 0.7 + 0.3
+      });
+    }
+
+    function renderAtmosphere() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let p of particles) {
+        p.y -= p.sy;
+        p.x += p.sx;
+        if (p.y < 0) {
+          p.y = canvas.height + 5;
+          p.x = Math.random() * canvas.width;
+        }
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(246, 228, 181, ${p.alpha})`;
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = '#dfb76c';
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+      animId = requestAnimationFrame(renderAtmosphere);
+    }
+    renderAtmosphere();
+
+    // Reveal "Tap to Open"
+    const ctaContainer = document.getElementById('cta-container');
+    setTimeout(() => {
+      if (ctaContainer) {
+        ctaContainer.classList.remove('opacity-0', 'translate-y-6');
+        ctaContainer.classList.add('opacity-100', 'translate-y-0');
+      }
+    }, 1500);
+
+    /* ====================================================
+       WEB AUDIO SYNTHESIZER (100% Reliable Offline Sound)
+       ==================================================== */
+    let audioContext = null;
+    let isPlaying = false;
+    let synthInterval = null;
+
+    function initAudio() {
+      if (!audioContext) {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        audioContext = new AudioCtx();
+      }
+      if (audioContext.state === 'suspended') {
+        audioContext.resume();
+      }
+    }
+
+    function playNote(frequency, duration = 3.0, type = 'sine', gainVal = 0.05) {
+      if (!audioContext || !isPlaying) return;
+      try {
+        const osc = audioContext.createOscillator();
+        const gain = audioContext.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(frequency, audioContext.currentTime);
+
+        gain.gain.setValueAtTime(0.001, audioContext.currentTime);
+        gain.gain.exponentialRampToValueAtTime(gainVal, audioContext.currentTime + 0.3);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + duration);
+
+        osc.connect(gain);
+        gain.connect(audioContext.destination);
+
+        osc.start();
+        osc.stop(audioContext.currentTime + duration);
+      } catch (e) {
+        console.warn("Audio note error:", e);
+      }
+    }
+
+    // Raag Yaman scale (Wedding Harmony)
+    const melodyScale = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25, 659.25];
+    function startMusic() {
+      isPlaying = true;
+      let step = 0;
+      synthInterval = setInterval(() => {
+        if (!isPlaying) return;
+        const baseNote = melodyScale[step % melodyScale.length];
+        playNote(baseNote, 3.2, 'sine', 0.05);
+        if (step % 2 === 0) {
+          playNote(baseNote * 1.5, 2.5, 'triangle', 0.03);
+        }
+        step++;
+      }, 1400);
+    }
+
+    function toggleAudioPlayback() {
+      initAudio();
+      isPlaying = !isPlaying;
+      const icon = document.getElementById('music-icon');
+      if (isPlaying) {
+        startMusic();
+        icon.setAttribute('data-lucide', 'volume-2');
+      } else {
+        clearInterval(synthInterval);
+        icon.setAttribute('data-lucide', 'volume-x');
+      }
+      if (window.lucide && typeof lucide.createIcons === 'function') {
+        lucide.createIcons();
+      }
+    }
+    document.getElementById('audio-toggle-btn').addEventListener('click', toggleAudioPlayback);
+
+    let isTransitioning = false;
+
+    function proceedToMainInvitation() {
+      const phase2 = document.getElementById('phase2-transition');
+      const phase3 = document.getElementById('phase3-main');
+      if (!phase2 || !phase3) return;
+
+      phase2.classList.add('opacity-0', 'transition-opacity', 'duration-700');
+
+      setTimeout(() => {
+        phase2.style.display = 'none';
+        phase3.classList.remove('opacity-0');
+        phase3.classList.add('opacity-100');
+
+        confetti({
+          particleCount: 100,
+          spread: 100,
+          origin: { y: 0.35 },
+          colors: ['#dfb76c', '#ffffff', '#e2b96f', '#042217']
+        });
+      }, 700);
+    }
+
+    function startInvitationExperience() {
+      if (isTransitioning) return;
+      isTransitioning = true;
+
+      initAudio();
+      startMusic();
+
+      confetti({
+        particleCount: 60,
+        spread: 70,
+        origin: { y: 0.65 },
+        colors: ['#dfb76c', '#f6e4b5', '#a0782e']
+      });
+
+      const phase1 = document.getElementById('phase1-video');
+      const phase2 = document.getElementById('phase2-transition');
+      const waxSeal = document.getElementById('scroll-wax-seal');
+      const parchment = document.getElementById('scroll-parchment');
+      const continueBtn = document.getElementById('continue-invitation-btn');
+
+      phase1.classList.add('opacity-0');
+      setTimeout(() => {
+        phase1.style.display = 'none';
+        cancelAnimationFrame(animId);
+        phase2.classList.remove('hidden');
+
+        setTimeout(() => {
+          waxSeal.classList.add('seal-breaking');
+          parchment.style.transform = 'scaleY(1)';
+          continueBtn.classList.remove('hidden');
+          continueBtn.classList.add('inline-flex');
+        }, 150);
+      }, 900);
+    }
+
+    document.getElementById('continue-invitation-btn').addEventListener('click', () => {
+      proceedToMainInvitation();
+    });
+
+    // Listeners for Phase 1
+    document.getElementById('tap-to-open-btn').addEventListener('click', (e) => {
+      e.stopPropagation();
+      startInvitationExperience();
+    });
+
+    document.getElementById('quick-enter-btn').addEventListener('click', (e) => {
+      e.stopPropagation();
+      startInvitationExperience();
+    });
+
+    document.getElementById('phase1-video').addEventListener('click', startInvitationExperience);
+
+    const isMobileViewport = window.matchMedia('(max-width: 767px)').matches;
+    if (isMobileViewport) {
+      setTimeout(() => {
+        startInvitationExperience();
+      }, 1200);
+    }
+
+    // EDIT HERE: Wedding Date for Countdown
+    const weddingTimestamp = new Date('December 28, 2026 16:30:00').getTime();
+
+    function updateCountdown() {
+      const daysEl = document.getElementById('days');
+      const hoursEl = document.getElementById('hours');
+      const minutesEl = document.getElementById('minutes');
+      const secondsEl = document.getElementById('seconds');
+
+      if (!daysEl || !hoursEl || !minutesEl || !secondsEl) {
+        return;
+      }
+
+      const now = new Date().getTime();
+      const difference = weddingTimestamp - now;
+
+      if (difference <= 0) {
+        daysEl.innerText = '00';
+        hoursEl.innerText = '00';
+        minutesEl.innerText = '00';
+        secondsEl.innerText = '00';
+        return;
+      }
+
+      const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((difference % (1000 * 60)) / 1000);
+
+      daysEl.innerText = d < 10 ? '0' + d : d;
+      hoursEl.innerText = h < 10 ? '0' + h : h;
+      minutesEl.innerText = m < 10 ? '0' + m : m;
+      secondsEl.innerText = s < 10 ? '0' + s : s;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // RSVP Submission, WhatsApp Notification & Excel Export
+    const rsvpForm = document.getElementById('wedding-rsvp-form');
+    const rsvpSuccessCard = document.getElementById('rsvp-success-card');
+    const organizerWhatsappNumber = '9686538203';
+    const storageKey = 'wedding-rsvp-database';
+    const organizerPassword = 'weddingadmin2026';
+
+    function forceShowInvitation() {
+      const phase1 = document.getElementById('phase1-video');
+      const phase2 = document.getElementById('phase2-transition');
+      const phase3 = document.getElementById('phase3-main');
+
+      if (phase1) {
+        phase1.style.display = 'none';
+      }
+      if (phase2) {
+        phase2.style.display = 'none';
+      }
+      if (phase3) {
+        phase3.classList.remove('opacity-0');
+        phase3.classList.add('opacity-100');
+      }
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    function openRsvpSection() {
+      const target = document.getElementById('rsvp-section');
+      forceShowInvitation();
+      setTimeout(() => {
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 200);
+    }
+
+    document.querySelectorAll('a[href="#rsvp-section"], [data-rsvp-target]').forEach((button) => {
+      button.addEventListener('click', (event) => {
+        event.preventDefault();
+        openRsvpSection();
+        const currentHash = window.location.hash;
+        if (currentHash !== '#rsvp-section') {
+          history.pushState(null, '', '#rsvp-section');
+        }
+      });
+    });
+
+    function normalizeWhatsAppNumber(value) {
+      const digits = (value || '').replace(/\D/g, '');
+      if (digits.length === 10) return '91' + digits;
+      return digits;
+    }
+
+    function getStoredRsvps() {
+      try {
+        return JSON.parse(localStorage.getItem(storageKey) || '[]');
+      } catch (error) {
+        return [];
+      }
+    }
+
+    function saveRsvpEntry(entry) {
+      const rows = getStoredRsvps();
+      rows.push(entry);
+      localStorage.setItem(storageKey, JSON.stringify(rows));
+      renderAdminRsvpTable();
+    }
+
+    function renderAdminRsvpTable() {
+      const body = document.getElementById('admin-rsvp-table-body');
+      if (!body) return;
+
+      const rows = getStoredRsvps();
+      const countEl = document.getElementById('admin-rsvp-count');
+      if (countEl) {
+        countEl.innerText = rows.length + ' guests have responded.';
+      }
+
+      if (!rows.length) {
+        body.innerHTML = '<tr><td colspan="8" class="px-3 py-6 text-center text-regal-cream/60">No RSVP entries yet.</td></tr>';
+        return;
+      }
+
+      body.innerHTML = rows.map((row) => `
+        <tr class="align-top text-xs">
+          <td class="px-3 py-3">${(row.guestName || '').replace(/</g, '&lt;')}</td>
+          <td class="px-3 py-3">${(row.guestContact || '').replace(/</g, '&lt;')}</td>
+          <td class="px-3 py-3">${(row.attendanceStatus || '').replace(/</g, '&lt;')}</td>
+          <td class="px-3 py-3">${(row.guestCount || '').replace(/</g, '&lt;')}</td>
+          <td class="px-3 py-3">${(row.guestDiet || '—').replace(/</g, '&lt;')}</td>
+          <td class="px-3 py-3">${(row.flightInfo || '—').replace(/</g, '&lt;')}</td>
+          <td class="px-3 py-3">${(row.songRequest || '—').replace(/</g, '&lt;')}</td>
+          <td class="px-3 py-3">${new Date(row.timestamp || Date.now()).toLocaleString()}</td>
+        </tr>
+      `).join('');
+    }
+
+    function generateGuestMessage(name) {
+      return [
+        'Thank you, ' + name + '! 💖',
+        '',
+        'Your RSVP has been successfully received.',
+        '',
+        'We are excited to celebrate our wedding with you on:',
+        '📅 28 December 2026',
+        '📍 The Leela Palace, Udaipur',
+        '',
+        'Looking forward to creating beautiful memories together.',
+        '',
+        'Message from: +91 9686538203',
+        '',
+        'With love,',
+        'Krishna & Jyothi ✨'
+      ].join('\n');
+    }
+
+    function generateOrganizerMessage(entry) {
+      return [
+        'New Wedding RSVP Received',
+        '',
+        'Guest Name: ' + entry.guestName,
+        'Phone: ' + entry.guestContact,
+        'Attendance: ' + entry.attendanceStatus,
+        'Guests: ' + entry.guestCount,
+        'Diet: ' + (entry.guestDiet || 'Not specified'),
+        'Arrival: ' + (entry.flightInfo || 'Not specified'),
+        'Song Request: ' + (entry.songRequest || 'Not specified'),
+        '',
+        'Submitted at: ' + new Date().toLocaleString()
+      ].join('\n');
+    }
+
+    function openWhatsApp(number, message) {
+      const phone = normalizeWhatsAppNumber(number);
+      const url = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(message);
+      window.open(url, '_blank');
+    }
+
+    function exportRsvpsToExcel() {
+      const rows = getStoredRsvps();
+      if (!rows.length) {
+        alert('No RSVP entries found yet.');
+        return;
+      }
+
+      const headers = ['Guest Name','Phone','Attendance','Guest Count','Diet','Arrival','Song Request','Timestamp'];
+      const csvRows = [headers.join(',')];
+
+      rows.forEach(row => {
+        const values = [
+          row.guestName,
+          row.guestContact,
+          row.attendanceStatus,
+          row.guestCount,
+          row.guestDiet || '',
+          row.flightInfo || '',
+          row.songRequest || '',
+          row.timestamp || ''
+        ].map(value => '"' + String(value).replace(/"/g, '""') + '"');
+        csvRows.push(values.join(','));
+      });
+
+      const csvContent = csvRows.join('\n');
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'wedding-rsvp-export.csv';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+
+      const adminCount = document.getElementById('admin-rsvp-count');
+      if (adminCount) {
+        adminCount.innerText = rows.length + ' guests have responded.';
+      }
+    }
+
+    function updateAdminVisibility() {
+      const adminPanel = document.getElementById('admin-panel');
+      const adminLoginCard = document.getElementById('admin-login-card');
+      const isLoggedIn = sessionStorage.getItem('wedding-admin-auth') === 'true';
+      if (adminPanel && adminLoginCard) {
+        adminPanel.classList.toggle('hidden', !isLoggedIn);
+        adminLoginCard.classList.toggle('hidden', isLoggedIn);
+      }
+      renderAdminRsvpTable();
+    }
+
+    const adminLoginForm = document.getElementById('admin-login-form');
+    if (adminLoginForm) {
+      adminLoginForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const password = document.getElementById('admin-password').value;
+        if (password === organizerPassword) {
+          sessionStorage.setItem('wedding-admin-auth', 'true');
+          updateAdminVisibility();
+          document.getElementById('admin-password').value = '';
+          exportRsvpsToExcel();
+        } else {
+          alert('Incorrect organizer password.');
+        }
+      });
+    }
+
+    const adminLogoutBtn = document.getElementById('admin-logout-btn');
+    if (adminLogoutBtn) {
+      adminLogoutBtn.addEventListener('click', () => {
+        sessionStorage.removeItem('wedding-admin-auth');
+        updateAdminVisibility();
+      });
+    }
+
+    const adminExportBtn = document.getElementById('admin-export-btn');
+    if (adminExportBtn) {
+      adminExportBtn.addEventListener('click', exportRsvpsToExcel);
+    }
+
+    updateAdminVisibility();
+
+    function handleRsvpSubmit(event) {
+      if (event && typeof event.preventDefault === 'function') {
+        event.preventDefault();
+      }
+
+      if (!rsvpForm || !rsvpSuccessCard) return;
+
+      const guestNameInput = document.getElementById('guest-name');
+      const guestContactInput = document.getElementById('guest-contact');
+      const attendanceStatusInput = document.getElementById('attendance-status');
+      const guestCountInput = document.getElementById('guest-count');
+      const guestDietInput = document.getElementById('guest-diet');
+      const flightInfoInput = document.getElementById('flight-info');
+      const songRequestInput = document.getElementById('song-request');
+      const passGuestName = document.getElementById('pass-guest-name');
+      const passGuestCount = document.getElementById('pass-guest-count');
+
+      if (!guestNameInput || !guestContactInput || !attendanceStatusInput || !guestCountInput || !passGuestName || !passGuestCount) {
+        alert('RSVP form is not ready yet. Please refresh the page and try again.');
+        return;
+      }
+
+      const guestName = guestNameInput.value.trim();
+      const guestContact = guestContactInput.value.trim();
+      const attendanceStatus = attendanceStatusInput.value;
+      const guestCount = guestCountInput.value;
+      const guestDiet = (guestDietInput ? guestDietInput.value.trim() : '');
+      const flightInfo = (flightInfoInput ? flightInfoInput.value.trim() : '');
+      const songRequest = (songRequestInput ? songRequestInput.value.trim() : '');
+
+      if (!guestName || !guestContact) {
+        alert('Please fill in your name and mobile number.');
+        return;
+      }
+
+      const entry = {
+        guestName,
+        guestContact,
+        attendanceStatus,
+        guestCount,
+        guestDiet,
+        flightInfo,
+        songRequest,
+        timestamp: new Date().toISOString()
+      };
+
+      saveRsvpEntry(entry);
+
+      passGuestName.innerText = guestName;
+      passGuestCount.innerText = guestCount;
+
+      const guestMessage = generateGuestMessage(guestName);
+      const organizerMessage = generateOrganizerMessage(entry);
+
+\      // Prioritize sending the guest confirmation using the organizer's WhatsApp contact flow.
+      openWhatsApp(guestContact, guestMessage);
+      openWhatsApp(organizerWhatsappNumber, organizerMessage);
+
+      rsvpForm.classList.add('opacity-50', 'pointer-events-none');
+
+      confetti({
+        particleCount: 120,
+        spread: 90,
+        origin: { y: 0.6 },
+        colors: ['#dfb76c', '#042217', '#ffffff']
+      });
+
+      setTimeout(() => {
+        rsvpForm.classList.add('hidden');
+        rsvpSuccessCard.classList.remove('hidden');
+      }, 600);
+    }
+
+    window.submitRsvpForm = handleRsvpSubmit;
+
+    if (rsvpForm) {
+      rsvpForm.addEventListener('submit', handleRsvpSubmit);
+    }
+
+    const submitButton = document.querySelector('#wedding-rsvp-form button[type="submit"]');
+    if (submitButton) {
+      submitButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        handleRsvpSubmit(event);
+      });
+    }
+
+    const guestWhatsAppBtn = document.getElementById('send-guest-whatsapp-btn');
+    if (guestWhatsAppBtn) {
+      guestWhatsAppBtn.addEventListener('click', () => {
+        const guestName = document.getElementById('pass-guest-name').innerText.trim();
+        const guestContact = document.getElementById('guest-contact').value.trim();
+        openWhatsApp(guestContact, generateGuestMessage(guestName));
+      });
+    }
+
+    // Lightbox Modal
+    const lightboxModal = document.getElementById('lightbox-modal');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    lightboxClose.addEventListener('click', () => {
+      lightboxModal.classList.add('hidden');
+    });
+
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target === lightboxModal) {
+        lightboxModal.classList.add('hidden');
+      }
+    });
+
+    // Mobile Navigation Toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Share link button
+    document.getElementById('share-invite-btn').addEventListener('click', () => {
+      const dummy = document.createElement('input');
+      dummy.value = window.location.href;
+      document.body.appendChild(dummy);
+      dummy.select();
+      document.execCommand('copy');
+      document.body.removeChild(dummy);
+
+      const toast = document.createElement('div');
+      toast.className = 'fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-regal-gold text-regal-emerald font-bold text-xs uppercase tracking-widest px-6 py-3 rounded-full shadow-2xl transition-all';
+      toast.innerText = 'Wedding Invitation Link Copied!';
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 2500);
+    });
+
+  </script>
+</body>
+</html>
